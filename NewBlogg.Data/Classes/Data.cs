@@ -1,6 +1,6 @@
 ﻿namespace NewBlogg.Data.Classes
 {
-    public class Class1
+    public class Data
     {
 
     }
