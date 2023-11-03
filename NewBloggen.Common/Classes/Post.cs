@@ -1,6 +1,8 @@
-﻿namespace NewBlogg.Common.Classes
+﻿using NewBlogg.Common.Interfaces;
+
+namespace NewBlogg.Common.Classes
 {
-    public class Post
+    public class Post:IPost
     {
         public int Id { get; set; }
         public Title Title { get; set; }
