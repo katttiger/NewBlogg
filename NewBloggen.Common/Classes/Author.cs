@@ -13,5 +13,15 @@ namespace NewBlogg.Common.Classes
         public string LastName {  get; set; }
         public Author(int id, string fName, string lName) => 
             (Id, FirstName, LastName) = (id, fName, lName);
+
+        public Author()
+        {
+                
+        }
+
+        public static implicit operator Author(List<Author> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

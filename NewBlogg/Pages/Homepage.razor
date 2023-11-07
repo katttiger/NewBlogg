@@ -1,13 +1,30 @@
-﻿@page "/"
+﻿@using NewBlogg.Data.Classes
+@using NewBlogg.Data.Interfaces
+@using NewBlogg.Common.Interfaces
+@using NewBlogg.Common.Classes
+@using NewBlogg.Handler.Classes
+@inject Handler h
 
+@page "/"
 <PageTitle>Blogg</PageTitle>
 
-<h1>Hello, friend!</h1>
+<h1>Blogg</h1>
 
-<h2>Write down your woes:</h2>
-
-<ul>
-    <li>
-
-    </li>
-</ul>
+@foreach (var post in h.GetPosts())
+{
+    <div class="card">
+    <div class="card-header">
+        @h.Author;
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            @post.Title
+        </h5>
+        <p class="card-text">
+            @post.Content
+        </p>
+    </div>
+</div>
+<br />
+  
+}
