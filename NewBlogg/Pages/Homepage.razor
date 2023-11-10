@@ -7,24 +7,28 @@
 
 @page "/"
 <PageTitle>Blogg</PageTitle>
-
 <h1>Blogg</h1>
+
+@*Sorting funktion*@
+
+@*Add post*@
 
 @foreach (var post in h.GetPosts())
 {
     <div class="card">
-    <div class="card-header">
-        @h.Author;
+        <div class="card-header">
+            <h3 class="card-title">@post.Title</h3>
+            <button class="btn btn-danger oi oi-trash"></button>
+            <button class="btn btn-primary oi oi-lock-locked"></button>
+        </div>
+        <div class="card-body">
+            <p class="card-text">@post.Content</p>
+            <h6 class="card-text text-end">@post.Author.FirstName @post.Author.LastName</h6>
+        </div>
+        @*<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary me-md-2" type="button">Button</button>
+    <button class="btn btn-primary" type="button">Button</button>
+    </div>*@
     </div>
-    <div class="card-body">
-        <h5 class="card-title">
-            @post.Title
-        </h5>
-        <p class="card-text">
-            @post.Content
-        </p>
-    </div>
-</div>
-<br />
-  
+    <br />
 }

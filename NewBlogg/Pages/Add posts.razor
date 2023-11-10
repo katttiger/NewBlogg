@@ -1,0 +1,63 @@
+﻿@using NewBlogg.Handler.Classes
+@using NewBlogg.Common.Classes
+@using NewBlogg.Common.Enums
+@using NewBlogg.Common.Interfaces
+@using NewBlogg.Data.Classes
+@using NewBlogg.Data.Interfaces;
+
+@inject Handler h
+
+@page "/add"
+
+<PageTitle>Publishing</PageTitle>
+
+<h1>Publish your post here: </h1>
+
+@if (h.showError == true)
+{
+    <div class="alert alert-warning" role="alert">
+        @h.error
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Input</th>
+            <th>Add</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input @bind=h.Post.Title />
+            </td>
+
+            <td>
+                <button class="btn btn-success btn-sm oi oi-plus" @onclick="()=>h.AddPost(h.Post.Title, h.Post.Content, h.Author.Id)">
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>
+                <div class="input-group-sm d-flex">
+                    <select class="form-select border border-dark" @bind=h.Author.Id>
+                        <option value="" selected>Authors</option>
+                        @foreach (var auth in h.GetAuthors())
+                        {
+                            <option value="@auth.Id"> @auth.FirstName @auth.LastName</option>
+                        }
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <textarea class="form-control" @bind="h.Post.Content" rows="1"></textarea>
+        </tr>
+
+    </tbody>
+</table>

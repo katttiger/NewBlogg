@@ -1,15 +1,15 @@
 ﻿using NewBlogg.Common.Classes;
 using NewBlogg.Common.Interfaces;
+using NewBlogg.Common.Enums;
 using NewBlogg.Data.Interfaces;
 using System.Linq.Expressions;
 using System.Reflection;
+using NewBlogg.Common.Extensionmethods;
 
 namespace NewBlogg.Data.Classes
 {
     public class Data : IData
-    //TODO: Implement interface
     //Add methods (generic and non-generic)
-    //Add SeedData
     {
         readonly List<IPost> _posts = new List<IPost>();
         readonly List<Author> _authors = new List<Author>();
@@ -43,7 +43,7 @@ namespace NewBlogg.Data.Classes
             if (fInfo is not null)
             {
                 var list = (List<T>)fInfo.GetValue(this);
-                if(expression is not null)
+                if (expression is not null)
                     list = list.Where(expression.Compile()).ToList();
                 return list;
             }
@@ -94,10 +94,14 @@ namespace NewBlogg.Data.Classes
             }
             catch (Exception)
             {
-
                 throw new ArgumentNullException();
             }
 
         }
+
+        public void DeletePost(int postId)
+            => _posts.RemoveAt(postId);
+        public void DeleteAuthor(int authorId) =>
+            _authors.RemoveAt(authorId);
     }
 }

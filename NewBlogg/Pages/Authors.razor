@@ -1,0 +1,46 @@
+﻿@using NewBlogg.Handler.Classes
+@using NewBlogg.Common.Classes
+@using NewBlogg.Common.Enums
+@using NewBlogg.Common.Interfaces
+@using NewBlogg.Data.Classes
+@using NewBlogg.Data.Interfaces;
+
+@inject Handler h
+@page "/authors"
+<PageTitle>Authors</PageTitle>
+
+@if (h.showError == true)
+{
+    <div class="alert alert-warning" role="alert">
+        @h.error
+    </div>
+}
+<h1>Meet our publishers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Last name</th>
+            <th>Last name</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr>
+            <td><input placeholder="Id" disabled/></td>
+            <td><input @bind="h.Author.FirstName" placeholder="First name" /></td>
+            <td><input @bind="h.Author.LastName" placeholder="Last name" /></td>
+            <td><button class="btn btn-primary oi oi-person" @onclick="()=>h.AddAuthor(h.Author.FirstName, h.Author.LastName)"></button></td>
+        </tr>
+        @foreach (var author in h.GetAuthors())
+        {
+            <tr>
+                <td>@author.Id</td>
+                <td>@author.FirstName</td>
+                <td>@author.LastName</td>
+                <td><button class="btn btn-danger oi oi-trash" @onclick="()=>h.RemoveAuthor(author.Id)"></button></td>
+             </tr>
+        }
+    </tbody>
+</table>

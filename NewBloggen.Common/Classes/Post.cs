@@ -6,7 +6,7 @@ namespace NewBlogg.Common.Classes
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public Author Author { get; set; }
+        public IAuthor Author { get; set; }
         public string Content { get; set; }
         public DateTime DatePosted { get; set; }
    
@@ -14,7 +14,7 @@ namespace NewBlogg.Common.Classes
         {
 
         }
-        public Post(int id, string title, Author author, string context) =>
+        public Post(int id, string title, IAuthor author, string context) =>
             (Id, Title, Author, Content) = (id, title, author, context);
     }
 }
