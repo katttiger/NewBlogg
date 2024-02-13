@@ -1,23 +1,6 @@
-﻿@using NewBlogg.Handler.Classes
-@using NewBlogg.Common.Classes
-@using NewBlogg.Common.Enums
-@using NewBlogg.Common.Interfaces
-@using NewBlogg.Data.Classes
-@using NewBlogg.Data.Interfaces
-@using NewBlogg.Components
+﻿<h3>AddAuthor</h3>
 
-@inject Handler h
-@page "/authors"
-<PageTitle>Authors</PageTitle>
-
-@if (h.showError == true)
-{
-    <div class="alert alert-warning" role="alert">
-        @h.error
-    </div>
-}
-<h1>Meet our publishers</h1>
-
+@*
 <table class="table">
     <thead>
         <tr>
@@ -45,3 +28,19 @@
         }
     </tbody>
 </table>
+*@
+<div>
+<tabel class="table">
+    
+</tabel>
+
+</div>
+
+@code {
+    [Parameter]
+    public string FirstName { get; set;}
+    [Parameter]
+    public string LastName{ get; set; }
+
+
+}

@@ -1,0 +1,40 @@
+﻿@*Component to present the posts*@
+
+@* <div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@post.Title</h3>
+        <button class="btn btn-danger oi oi-trash"></button>
+        <button class="btn btn-primary oi oi-lock-locked"></button>
+    </div>
+    <div class="card-body">
+        <p class="card-text">@post.Content</p>
+        <h6 class="card-text text-end">@post.Author.FirstName @post.Author.LastName</h6>
+    </div>
+    @*<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary me-md-2" type="button">Button</button>
+    <button class="btn btn-primary" type="button">Button</button>
+    </div>
+</div>
+<br /> *@
+
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public string Content { get; set; }
+
+    [Parameter]
+    public string AuthorLastName { get; set; }
+    [Parameter]
+    public string AuthorFirstName { get; set; }
+
+    //EventCallback=>notification for the interested parties.
+    [Parameter]
+    public EventCallback Delete { get; set; }
+
+    public async Task OnDelete()
+    {
+        await Delete.InvokeAsync();
+    }
+}

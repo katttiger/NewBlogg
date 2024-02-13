@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBlogg", "NewBlogg\NewBlogg.csproj", "{A233089B-8221-4FAF-99D1-69474DD54C58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewBlogg", "NewBlogg\NewBlogg.csproj", "{A233089B-8221-4FAF-99D1-69474DD54C58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBlogg.Handler", "NewBloggen.Handler\NewBlogg.Handler.csproj", "{41B32398-E4FC-4EBA-A835-2BF857A3DD9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewBlogg.Handler", "NewBloggen.Handler\NewBlogg.Handler.csproj", "{41B32398-E4FC-4EBA-A835-2BF857A3DD9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBlogg.Data", "NewBlogg.Data\NewBlogg.Data.csproj", "{A3A386C4-243C-4684-B73C-997F2B47DB80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewBlogg.Data", "NewBlogg.Data\NewBlogg.Data.csproj", "{A3A386C4-243C-4684-B73C-997F2B47DB80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBlogg.Common", "NewBloggen.Common\NewBlogg.Common.csproj", "{D60FF22F-5183-4FDD-B669-40D3F3B3B98A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewBlogg.Common", "NewBloggen.Common\NewBlogg.Common.csproj", "{D60FF22F-5183-4FDD-B669-40D3F3B3B98A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
